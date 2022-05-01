@@ -35,6 +35,16 @@ app.post('/v1/explorers/', (req, res) => {
     res.status(201).json({message: "Created"})
 })
 
+//Actualizar datos de un explorer
+app.put('/v1/explorers/:id', (req, res) => {
+    console.log(`Api Explorers PUT Request ${new Date()}`)
+    console.log(`Update Explorer with Id: ${req.params.id}`)
+
+    const requestBody = req.body //Parámetros de un Cliente 
+
+    res.status(200).json({message: "Updated!!!"})
+})
+
 // Con esto inicializamos esta app
 app.listen(port, () => {
  console.log(`Example app listening on port ${port}`)
