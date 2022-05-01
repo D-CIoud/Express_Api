@@ -18,6 +18,14 @@ app.get('/v1/explorers', (req,res) => {
     res.status(200).json(explorers)
 })
 
+//Regresar un explorer en base a un ID
+app.get('/v1/explorers/:id', (req, res) => {
+    console.log(`Api Explorers GET Request ${new Date()}`)
+    console.log(`Getting Explorer with Id ${req.params.id}`)
+    const explorer = {id:1, name: 'Jona'}
+    
+    res.status(200).json(explorer)
+})
 
 // Con esto inicializamos esta app
 app.listen(port, () => {
